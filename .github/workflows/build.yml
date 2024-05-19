@@ -18,9 +18,14 @@ jobs:
          
       - name: Configure CMake
         run: cmake -B_build
-
+        
       - name: Build project
-        run: cmake --build _build --config Release
+        run: |
+          cmake --build _build --config Release
+          dir
+          tree _build
+          mkdir artifacts
+          mv _build artifacts
         
   test:
     runs-on: ubuntu-latest
