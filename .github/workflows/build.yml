@@ -1,4 +1,4 @@
-name: Build with CMake on Windows
+name: Build
 
 on:
   push:
@@ -16,11 +16,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up CMake
-        uses: microsoft/setup-cmake@v1
-
+      - name: Install CMake
+        run: |
+          choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+          
       - name: Configure CMake
         run: cmake -B build
 
       - name: Build project
         run: cmake --build build --config Release
+
