@@ -26,6 +26,12 @@ jobs:
           tree _build
           mkdir artifacts
           mv _build artifacts
+      
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: artifacts
         
   test:
     runs-on: ubuntu-latest
@@ -44,10 +50,3 @@ jobs:
 
     - name: Tests
       run:  _build/check
-
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: artifacts
-        path: artifacts
-
