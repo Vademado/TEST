@@ -14,12 +14,8 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install CMake
-        run: |
-          choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
-          
+        uses: actions/checkout@v1
+         
       - name: Configure CMake
         run: cmake -B build
 
