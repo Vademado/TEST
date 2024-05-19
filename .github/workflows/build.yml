@@ -21,11 +21,11 @@ jobs:
         
       - name: Build project
         run: |
-          cmake --build _build
+          cmake --build _build --config Release
           dir
           tree _build
           mkdir artifacts
-          copy _build/Debug/RAII_Idiom_Project.exe artifacts
+          copy _build/Release/RAII_Idiom_Project.exe artifacts
           mv _build artifacts
       
       - name: Archive artifacts
