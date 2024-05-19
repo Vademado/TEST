@@ -21,7 +21,7 @@ jobs:
         
       - name: Build project
         run: |
-          cmake --build _build --config Release
+          cmake --build _build
           dir
           tree _build
           mkdir artifacts
