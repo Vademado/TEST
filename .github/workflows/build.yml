@@ -14,11 +14,11 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
          
       - name: Configure CMake
-        run: cmake -B build
+        run: cmake -H. -B_build
 
       - name: Build project
-        run: cmake --build build --config Release
+        run: cmake --build _build --config Release
 
